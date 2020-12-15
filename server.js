@@ -1768,12 +1768,12 @@ client.on('ready', async() => {
     data.map(async(users) => {
       if(users.time - Date.now() < 1) {
         const guild = client.guilds.cache.get(users.guildID);
-        const role = guild.roles.cache.get('767724422122962954');
+        const role = guild.roles.cache.get('775049528008114176');
         let c = await guild.members.cache.get(users.userID);
         if(c) {
           c.roles.remove(role);
           await vipmodel.findOneAndDelete({userID: c.id});
-          client.guilds.cache.get(users.guildID).channels.cache.get('787447369066872872').send(new MessageEmbed().setDescription(`**وقت الراجل دة خلص وتم حذف الرول منو <@${c.id}>**`).setColor('#36393e'));
+          client.guilds.cache.get(users.guildID).channels.cache.get('775052733454876702').send(new MessageEmbed().setDescription(`**وقت الراجل دة خلص وتم حذف الرول منو <@${c.id}>**`).setColor('#36393e'));
         }
       }
     })
@@ -1805,7 +1805,7 @@ client.on('message', async(message) => {
         const cooldown = await vipmodel.findOne({userID: message.author.id}); 
         message.channel.send(new MessageEmbed().setDescription(`من فضلك قم بتحويل المبلغ التالي لشراء الرول: \`${lPrice}\`\n\n\`#credits <@513432487771504658> ${price}\``))
         .then(async msg => {
-          let filter = response => response.author.id == "282859044593598464" && response.mentions._content.includes(`:moneybag: | ${message.author.username}, has transferred \`$${lPrice}\` to <@513432487771504658>`);
+          let filter = response => response.author.id == "567703512763334685" && response.mentions._content.includes(`:moneybag: | ${message.author.username}, has transferred \`$${lPrice}\` to <@513432487771504658>`);
           message.channel.awaitMessages(filter, { max: 1, time: ms('5m'), errors: ['time'] })
           .then(collected => {
             vipmodel.findOne({
@@ -1828,12 +1828,12 @@ client.on('message', async(message) => {
                       userID: message.author.id,
                       time: Date.now() + ms('30d'),
                     }).save().catch(console.error);
-                  client.guilds.cache.get(message.guild.id).channels.cache.get('787447369066872872').send(new MessageEmbed().setDescription(`**السلام عليكم مسا مسا علي الناس الكويسة يعني ادارة مي كودز احلا مسا عليكم بص يزميلي في واحد اشتري رتبة في اي بي تممام مين بقا مفاجأه ${message.author} دة اشتراها 30 يوم**`).setColor('#36393e'));
+                  client.guilds.cache.get(message.guild.id).channels.cache.get('775052733454876702').send(new MessageEmbed().setDescription(`**السلام عليكم مسا مسا علي الناس الكويسة يعني ادارة مي كودز احلا مسا عليكم بص يزميلي في واحد اشتري رتبة في اي بي تممام مين بقا مفاجأه ${message.author} دة اشتراها 30 يوم**`).setColor('#36393e'));
                 } else {
                   doc.time = Date.now() + ms('30d');
                   doc.save().catch(console.error);
                   message.channel.send(`**الف مبروك يسطا اديتك الرول وكمان الوقت تقدر تشوف الوقت بي الامر دة يابو الصحاب \`$vip\`**`);
-                  client.guilds.cache.get(message.guild.id).channels.cache.get('787447369066872872').send(new MessageEmbed().setDescription(`**السلام عليكم مسا مسا علي الناس الكويسة يعني ادارة مي كودز احلا مسا عليكم بص يزميلي في واحد اشتري رتبة في اي بي تممام مين بقا مفاجأه ${message.author} دة اشتراها 30 يوم**`).setColor('#36393e'));
+                  client.guilds.cache.get(message.guild.id).channels.cache.get('775052733454876702').send(new MessageEmbed().setDescription(`**السلام عليكم مسا مسا علي الناس الكويسة يعني ادارة مي كودز احلا مسا عليكم بص يزميلي في واحد اشتري رتبة في اي بي تممام مين بقا مفاجأه ${message.author} دة اشتراها 30 يوم**`).setColor('#36393e'));
                   message.guild.member(message.author.id).roles.add('775049528008114176');
                }
               }
@@ -1867,12 +1867,12 @@ client.on('message', async(message) => {
             userID: user.id,
             time: Date.now() + ms(args[2]),
           }).save().catch(console.error);
-          client.guilds.cache.get(message.guild.id).channels.cache.get('787447369066872872').send(new MessageEmbed().setDescription(`**${message.author} الراجل دة جدع لقي الواد مش معاه كريدت قام ادالو وقت وي الرول بي بلاش دة الوقت يا بو الصحاب \`${args[2]}\` الوقت اخدو ${user}**`).setColor('#36393e'));
+          client.guilds.cache.get(message.guild.id).channels.cache.get('775052733454876702').send(new MessageEmbed().setDescription(`**${message.author} الراجل دة جدع لقي الواد مش معاه كريدت قام ادالو وقت وي الرول بي بلاش دة الوقت يا بو الصحاب \`${args[2]}\` الوقت اخدو ${user}**`).setColor('#36393e'));
       } else {
         doc.time = doc.time + ms(args[2]);
         doc.save();
         message.channel.send(`**${message.author} الراجل دة جدع لاقي الواد غلبان اداولو وقت وي الرول بتاعت في اي بي انا بحبك ياض خلصانة**`);
-        client.guilds.cache.get(message.guild.id).channels.cache.get('787447369066872872').send(new MessageEmbed().setDescription(`**${message.author} الراجل دة جدع لقي الواد مش معاه كريدت قام ادالو وقت وي الرول بي بلاش دة الوقت يا بو الصحاب \`${args[2]}\` الوقت اخدو ${user}**`).setColor('#36393e'));
+        client.guilds.cache.get(message.guild.id).channels.cache.get('775052733454876702').send(new MessageEmbed().setDescription(`**${message.author} الراجل دة جدع لقي الواد مش معاه كريدت قام ادالو وقت وي الرول بي بلاش دة الوقت يا بو الصحاب \`${args[2]}\` الوقت اخدو ${user}**`).setColor('#36393e'));
         message.guild.member(user.id).roles.add('775049528008114176');
       }
     });
