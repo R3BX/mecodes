@@ -1785,7 +1785,7 @@ client.on('ready', () => {
   });
   const humanizeDuration = require('humanize-duration');
 client.on("message", async message => {
-  if(message.content.startsWith(prefix + "vip")) { 
+  if(message.content.startsWith(prefix + "myvip")) { 
   const cooldown = await vipmodel.findOne({guildID: message.guild.id, userID: message.author.id});
   if (cooldown) {
   const remaining = humanizeDuration(cooldown.time - Date.now(),{ units: ['y','mo','d','h','m','s'], round: true });
@@ -1799,7 +1799,7 @@ client.on("message", async message => {
 
 client.on('message', async(message) => {
   if(message.author.bot) return;
-  if(message.content === prefix + 'buy') {
+  if(message.content === prefix + 'buy-vip') {
     let price = '40000';
     let lPrice = Math.floor(price-(price*(5/100)));
         const cooldown = await vipmodel.findOne({userID: message.author.id}); 
