@@ -1800,7 +1800,7 @@ client.on("message", async message => {
 client.on('message', async(message) => {
   if(message.author.bot) return;
   if(message.content === prefix + 'buy') {
-    let price = '10';
+    let price = '40000';
     let lPrice = Math.floor(price-(price*(5/100)));
         const cooldown = await vipmodel.findOne({userID: message.author.id}); 
         message.channel.send(new MessageEmbed().setDescription(`من فضلك قم بتحويل المبلغ التالي لشراء الرول: \`${lPrice}\`\n\n\`#credits <@513432487771504658> ${price}\``))
@@ -1813,14 +1813,14 @@ client.on('message', async(message) => {
               userID: message.author.id
             }, (err, doc) => {
               if(err) throw err;  
-             if(message.guild.member(message.author.id).roles.cache.has('767724422122962954')) {
+             if(message.guild.member(message.author.id).roles.cache.has('775049528008114176')) {
               message.channel.send(`**انت مش هتقدر تشتري دلوقتي يسطا لان انت مشتري قبل كدة لازم يخلص الوقت**`);
              }else {
                 if(!doc) {
                   message.channel.send(`**يسطا مش عيب يعني كدة تشتري هو الشراء كدة وخلاص لازم تستني 5 ثواني البوت يحفظك في الداتا بيس صح ولا غلط**`).then((m) => {
                     setTimeout(() => {
                       m.edit(`**الف مبروك يسطا اديتك الرول وكمان الوقت تقدر تشوف الوقت بي الامر دة يابو الصحاب \`$vip\`**`)
-                      message.guild.member(message.author.id).roles.add('767724422122962954');
+                      message.guild.member(message.author.id).roles.add('775049528008114176');
                     }, 5000);
                     });
                     new vipmodel({
@@ -1834,7 +1834,7 @@ client.on('message', async(message) => {
                   doc.save().catch(console.error);
                   message.channel.send(`**الف مبروك يسطا اديتك الرول وكمان الوقت تقدر تشوف الوقت بي الامر دة يابو الصحاب \`$vip\`**`);
                   client.guilds.cache.get(message.guild.id).channels.cache.get('787447369066872872').send(new MessageEmbed().setDescription(`**السلام عليكم مسا مسا علي الناس الكويسة يعني ادارة مي كودز احلا مسا عليكم بص يزميلي في واحد اشتري رتبة في اي بي تممام مين بقا مفاجأه ${message.author} دة اشتراها 30 يوم**`).setColor('#36393e'));
-                  message.guild.member(message.author.id).roles.add('767724422122962954');
+                  message.guild.member(message.author.id).roles.add('775049528008114176');
                }
               }
               });
@@ -1859,7 +1859,7 @@ client.on('message', async(message) => {
         message.channel.send(`**يسطا مش عيب يعني كدة تشتري هو الشراء كدة وخلاص لازم تستني 5 ثواني البوت يحفظك في الداتا بيس صح ولا غلط**`).then((m) => {
           setTimeout(() => {
             m.edit(`**${message.author} الراجل دة جدع لاقي الواد غلبان اداولو وقت وي الرول بتاعت في اي بي انا بحبك ياض خلصانة**`);
-            message.guild.member(user.id).roles.add('767724422122962954');
+            message.guild.member(user.id).roles.add('775049528008114176');
           }, 5000);
           });
           new vipmodel({
@@ -1873,7 +1873,7 @@ client.on('message', async(message) => {
         doc.save();
         message.channel.send(`**${message.author} الراجل دة جدع لاقي الواد غلبان اداولو وقت وي الرول بتاعت في اي بي انا بحبك ياض خلصانة**`);
         client.guilds.cache.get(message.guild.id).channels.cache.get('787447369066872872').send(new MessageEmbed().setDescription(`**${message.author} الراجل دة جدع لقي الواد مش معاه كريدت قام ادالو وقت وي الرول بي بلاش دة الوقت يا بو الصحاب \`${args[2]}\` الوقت اخدو ${user}**`).setColor('#36393e'));
-        message.guild.member(user.id).roles.add('767724422122962954');
+        message.guild.member(user.id).roles.add('775049528008114176');
       }
     });
   }
