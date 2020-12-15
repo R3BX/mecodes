@@ -9,7 +9,7 @@ const client = new Discord.Client();
 const fs = require("fs");
 const ms = require("ms");
 const prefix = "#";
-client.login('NzU5NzQwNzMwNDE0ODU4Mjcx.X3B5sQ.T7KMVpa4qWDxttvQx8DjAwhb2KA');// BOT TOKEN
+client.login('NzcyODkyNTQ4NjE2MTU5MjQz.X6BSRw.OOS0hYZO2F-tWcKWOz-GGEuI4Wc');// BOT TOKEN
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
