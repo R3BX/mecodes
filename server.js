@@ -1712,7 +1712,7 @@ message.react('❌')
     if (message.author.bot) return;
      if (message.content === prefix + "help-youtube-2") {
          if (message.channel.id !== '772891628066439168') return message.reply(`<:694579694200422501:772896174066630678> | ** You cannot use robot commands outside of chat commands [ <#772891628066439168> ]**`)
- message.author.send(`** https://github.com/ASDFREWQASDFGHJKL/Welcome-Bot-Me-Codes.git **`).then(m => {
+ message.author.send(`** https://github.com/ASDFREWQASDFGHJKL/Welcome-Bot-Me-Codes **`).then(m => {
 message.react('✅');
 }).catch(() => {
 message.react('❌')
@@ -1724,7 +1724,7 @@ message.react('❌')
     if (message.author.bot) return;
      if (message.content === prefix + "help-youtube-3") {
          if (message.channel.id !== '772891628066439168') return message.reply(`<:694579694200422501:772896174066630678> | ** You cannot use robot commands outside of chat commands [ <#772891628066439168> ]**`)
- message.author.send(`**  https://github.com/TheMaestro0/Protection-bot **`).then(m => {
+ message.author.send(`**  https://github.com/ASDFREWQASDFGHJKL/Bot-Protection---Me-Codes **`).then(m => {
 message.react('✅');
 }).catch(() => {
 message.react('❌')
